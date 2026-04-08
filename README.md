@@ -26,7 +26,7 @@ Proyek ini mengintegrasikan langkah-langkah implementasi (Latihan) sekaligus mem
 
 ---
 
-## 📡 Daftar Endpoint API
+## Daftar Endpoint API
 
 | Method | Endpoint | Deskripsi |
 | :--- | :--- | :--- |
@@ -46,10 +46,11 @@ Ikuti langkah-langkah berikut untuk menjalankan API ini di mesin lokal:
 ```bash
 git clone <URL_GITHUB_ANDA>
 cd praktikum7_api
-2. Inisialisasi Virtual Environment & Dependensi
+```
+### 2. Inisialisasi Virtual Environment & Dependensi
 Sangat disarankan untuk mengisolasi instalasi pustaka menggunakan virtual environment.
 
-Bash
+```bash
 # Membuat environment
 python -m venv .venv
 
@@ -58,23 +59,26 @@ python -m venv .venv
 
 # Instalasi library yang dibutuhkan
 pip install -r requirements.txt
-3. Konfigurasi Basis Data
-Pastikan PostgreSQL dan ekstensi PostGIS telah berjalan di komputer Anda.
+```
+### 3. Konfigurasi Basis Data
+1. Pastikan PostgreSQL dan ekstensi PostGIS telah berjalan di komputer Anda.
+2. Buat tabel fasilitas_publik dengan kolom geometri (SRID: 4326).
+3. Salin template variabel lingkungan:
 
-Buat tabel fasilitas_publik dengan kolom geometri (SRID: 4326).
-
-Salin template variabel lingkungan:
-
-Bash
+```bash
 cp .env.example .env
+```
 Buka file .env dan sesuaikan nilainya (User, Password, Port, DB Name) dengan konfigurasi PostgreSQL lokal Anda.
 
-4. Menjalankan Server
+### 4. Menjalankan Server
 Jalankan server aplikasi menggunakan Uvicorn dengan mode live-reload:
 
-Bash
+```bash
 uvicorn main:app --reload
-📖 Dokumentasi & Pengujian (Swagger UI)
+```
+
+Dokumentasi & Pengujian (Swagger UI)
+
 FastAPI secara otomatis menghasilkan antarmuka dokumentasi interaktif. Setelah server berjalan, Anda dapat melakukan pengujian (testing) terhadap seluruh endpoint tanpa memerlukan aplikasi pihak ketiga seperti Postman.
 
 Buka tautan berikut di peramban web Anda:
